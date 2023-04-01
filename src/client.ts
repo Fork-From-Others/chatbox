@@ -2,7 +2,7 @@ import { ChatCompletionRequestMessage } from './utils/openai-node/api'
 import { Message } from './types'
 import * as wordCount from './utils'
 
-export async function replay(apiKey: string, host: string, maxContextSize: string, maxTokens: string, modelName: string, msgs: Message[], onText?: (text: string) => void, onError?: (error: Error) => void) {
+export async function replay(apiKey: string, proxy: string, host: string, maxContextSize: string, maxTokens: string, modelName: string, msgs: Message[], onText?: (text: string) => void, onError?: (error: Error) => void) {
     if (msgs.length === 0) {
         throw new Error('No messages to replay')
     }

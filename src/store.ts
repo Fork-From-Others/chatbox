@@ -12,6 +12,7 @@ import { useTranslation } from "react-i18next";
 export function getDefaultSettings(): Settings {
     return {
         openaiKey: '',
+        apiProxy: '',
         apiHost: 'https://api.openai.com',
         model: "gpt-3.5-turbo",
         maxContextSize: "4000",
@@ -39,7 +40,12 @@ export async function writeSettings(settings: Settings) {
     if (!settings.apiHost) {
         settings.apiHost = getDefaultSettings().apiHost
     }
+    if (!settings.apiProxy) {
+        settings.apiProxy = getDefaultSettings().apiProxy
+    }
+    console.log('writeSettings.apiProxy', settings.apiProxy)
     console.log('writeSettings.apiHost', settings.apiHost)
+    openai.setProxy(settings.apiProxy)
     openai.setHost(settings.apiHost)
     return api.writeStore('settings', settings)
 }

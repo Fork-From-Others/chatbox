@@ -129,3 +129,4 @@ yarn-error.log*
 next-env.d.ts
 
 tmp
+.idea

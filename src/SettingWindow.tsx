@@ -155,6 +155,15 @@ export default function SettingWindow(props: Props) {
                     <AccordionDetails>
                         <TextField
                             margin="dense"
+                            label={t('api proxy')}
+                            type="text"
+                            fullWidth
+                            variant="outlined"
+                            value={settingsEdit.apiProxy}
+                            onChange={(e) => setSettingsEdit({ ...settingsEdit, apiProxy: e.target.value.trim() })}
+                        />
+                        <TextField
+                            margin="dense"
                             label={t('api host')}
                             type="text"
                             fullWidth

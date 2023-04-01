@@ -18,6 +18,7 @@
   "or": "or",
   "proxy api host alert end": ".",
   "api host": "API Host",
+  "api proxy": "API Proxy",
   "model": "Model",
   "token": "Token",
   "max tokens in context": "Max Tokens in Context",

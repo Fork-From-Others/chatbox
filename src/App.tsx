@@ -122,8 +122,9 @@ function Main() {
     const [sessionClean, setSessionClean] = React.useState<Session | null>(null);
 
     const generateName = async (session: Session) => {
-        client.replay(
+        await client.replay(
             store.settings.openaiKey,
+            store.settings.apiProxy,
             store.settings.apiHost,
             store.settings.maxContextSize,
             store.settings.maxTokens,
@@ -143,6 +144,7 @@ function Main() {
     const generate = async (session: Session, promptMsgs: Message[], targetMsg: Message) => {
         await client.replay(
             store.settings.openaiKey,
+            store.settings.apiProxy,
             store.settings.apiHost,
             store.settings.maxContextSize,
             store.settings.maxTokens,
